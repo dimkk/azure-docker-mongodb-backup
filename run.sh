@@ -21,6 +21,8 @@ AZ_STORAGE_CS=${AZ_STORAGE_CS}
 
 BACKUP_CMD="mongodump --archive=/backup/${BACKUP_NAME} --host ${MONGODB_HOST} --port ${MONGODB_PORT} ${USER_STR}${PASS_STR}${DB_STR} ${EXTRA_OPTS}"
 
+echo $BACKUP_CMD
+
 echo "=> Creating backup script"
 rm -f /backup.sh
 cat <<EOF >> /backup.sh
@@ -34,6 +36,7 @@ fi
 
 MAX_BACKUPS=${MAX_BACKUPS}
 BACKUP_NAME=\$(date +\%Y.\%m.\%d.\%H\%M\%S)
+echo \$BACKUP_NAME
 echo "=> Backup started"
 if ${BACKUP_CMD} ;then
     echo "   Backup succeeded"
