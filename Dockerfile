@@ -23,4 +23,4 @@ ENV CRON_TIME="0 0 * * *"
 
 
 VOLUME ["/backup"]
-CMD ["/run.sh"]
+CMD ["/bin/bash","/run.sh"]
