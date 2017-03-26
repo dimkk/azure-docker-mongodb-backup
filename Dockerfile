@@ -19,7 +19,9 @@ RUN apt-get update && \
 ADD run.sh /run.sh
 RUN chmod +x /run.sh
 
-ENV CRON_TIME="0 0 * * *"
+ENV CRON_TIME="0 0 * * *" \
+    PYTHONHOME=/usr/local/bin \
+    PYTHONPATH=/usr/local/bin/lib
 
 
 VOLUME ["/backup"]
