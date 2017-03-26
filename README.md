@@ -1,5 +1,3 @@
-## NOT WORKING, THIS AZURE-CLI NOT WORKING PROPERLY NEITHER UBUNTU NOR DEBIAN
-
 # mongodb-azure-backup
 
 This image runs mongodump to backup data using cronjob to folder `/backup` and azure storage service
