@@ -20,8 +20,7 @@ AZ_STORAGE_CS=${AZ_STORAGE_CS}
 [[ ( -n "${MONGODB_DB}" ) ]] && DB_STR=" --db ${MONGODB_DB}"
 
 BACKUP_CMD="mongodump --out /backup/"'${BACKUP_NAME}'" --host ${MONGODB_HOST} --port ${MONGODB_PORT} ${USER_STR}${PASS_STR}${DB_STR} ${EXTRA_OPTS}"
-echo $BACKUP_CMD
-ping ${MONGODB_HOST} ; echo $?
+
 echo "=> Creating backup script"
 rm -f /backup.sh
 cat <<EOF >> /backup.sh
